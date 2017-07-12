@@ -16,6 +16,20 @@ function makeSlideTranslation(translationType, fromValue, toValue) {
   };
 }
 
+function makeFadeTransition(transitionType, fromValue, toValue){
+  return {
+    from: {
+      [transitionType]: fromValue,
+    },
+    to: {
+      [transitionType]: toValue,
+    },
+  };
+}
+export const fadeIn = makeFadeTransition('opacity', 0, 1);
+
+export const fadeOut = makeFadeTransition('opacity', 1, 0);
+
 export const slideInDown = makeSlideTranslation('translateY', -height, 0);
 
 export const slideInUp = makeSlideTranslation('translateY', height, 0);
